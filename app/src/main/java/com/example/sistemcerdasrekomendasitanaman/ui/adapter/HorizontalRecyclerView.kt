@@ -14,7 +14,7 @@ class HorizontalRecyclerView: RecyclerView.Adapter<HorizontalRecyclerView.MyView
     }
 
     override fun getItemCount(): Int {
-        return 25
+        return 7
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {

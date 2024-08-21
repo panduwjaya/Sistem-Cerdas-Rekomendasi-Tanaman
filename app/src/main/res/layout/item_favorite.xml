@@ -7,17 +7,15 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/itemFavorite"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="100dp"
+        android:layout_height="130dp"
         app:cardCornerRadius="25dp"
-        android:layout_marginHorizontal="15dp"
-        android:layout_marginTop="15dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:layout_width="100dp"
-            android:layout_height="130dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:src="@drawable/kaktus"
             android:scaleType="centerCrop"/>
 
@@ -25,14 +23,15 @@
 
     <TextView
         android:id="@+id/tv_plant_name"
-        android:layout_width="130dp"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/itemFavorite"
         android:textSize="14sp"
         android:textColor="@color/black"
+        android:enabled="true"
         android:gravity="center"
         android:layout_marginTop="6dp"
-        android:layout_marginBottom="15dp"
+        android:paddingBottom="20dp"
         app:layout_constraintEnd_toEndOf="@+id/itemFavorite"
         app:layout_constraintStart_toStartOf="@+id/itemFavorite"
         app:layout_constraintTop_toBottomOf="@+id/itemFavorite"
