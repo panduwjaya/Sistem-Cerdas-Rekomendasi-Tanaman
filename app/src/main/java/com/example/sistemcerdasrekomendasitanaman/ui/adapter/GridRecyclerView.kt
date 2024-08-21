@@ -1,18 +1,16 @@
 package com.example.sistemcerdasrekomendasitanaman.ui.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sistemcerdasrekomendasitanaman.R
 import com.example.sistemcerdasrekomendasitanaman.data.database.Favorite
 import com.example.sistemcerdasrekomendasitanaman.databinding.ItemFavoriteBinding
 
-class GridRecyclerView: RecyclerView.Adapter<GridRecyclerView.MyViewHolder>() {
+class GridRecyclerView(private val clickListener: (Favorite) -> Unit) : RecyclerView.Adapter<GridRecyclerView.MyViewHolder>() {
 
-    private var dataList : List<Favorite> = ArrayList()
+    private var dataList: List<Favorite> = ArrayList()
 
-    fun setData(data: List<Favorite>){
+    fun setData(data: List<Favorite>) {
         this.dataList = data
     }
 
@@ -26,13 +24,16 @@ class GridRecyclerView: RecyclerView.Adapter<GridRecyclerView.MyViewHolder>() {
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.bind(dataList[position])
+        holder.bind(dataList[position], clickListener)
     }
 
     class MyViewHolder(private val binding: ItemFavoriteBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(favorite: Favorite) {
+        fun bind(favorite: Favorite, clickListener: (Favorite) -> Unit) {
             with(binding) {
                 tvPlantName.text = favorite.name
+                root.setOnClickListener {
+                    clickListener(favorite)
+                }
             }
         }
     }
