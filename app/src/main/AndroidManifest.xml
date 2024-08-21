@@ -28,6 +28,9 @@
             android:name=".ui.primary.favorite.FavoriteFragment"
             android:exported="false" />
         <activity
+            android:name=".ui.primary.detail_tanaman.DetailTanamanActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.primary.profile.ProfileFragment"
             android:exported="false" />
         <activity
