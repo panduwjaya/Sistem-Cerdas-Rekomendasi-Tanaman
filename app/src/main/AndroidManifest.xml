@@ -22,7 +22,7 @@
             android:name=".ui.onboarding.onboardingSecond.OnboardingSecondActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.onboarding.onboardingFirst.OnboardingFirstActivity"
+            android:name=".ui.onboarding.onboardingFirst.OnboardFirstActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
