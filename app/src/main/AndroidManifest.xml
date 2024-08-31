@@ -16,10 +16,10 @@
             android:name=".ui.primary.profile.ProfileActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.onboarding.onboardingThird.OnboardingThirdActivity"
+            android:name=".ui.onboarding.onboardingThird.OnboardThirdActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.onboarding.onboardingSecond.OnboardingSecondActivity"
+            android:name=".ui.onboarding.onboardingSecond.OnboardSecondActivity"
             android:exported="false" />
         <activity
             android:name=".ui.onboarding.onboardingFirst.OnboardFirstActivity"
