@@ -29,7 +29,7 @@
             android:name=".ui.HolderImageActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.auth.password.ResetPasswordActivity"
+            android:name=".ui.auth.forgotpassword.ResetPasswordActivity"
             android:exported="false" />
         <activity
             android:name=".ui.auth.register.RegisterActivity"

@@ -1,4 +1,4 @@
-package com.example.sistemcerdasrekomendasitanaman.ui.auth.password
+package com.example.sistemcerdasrekomendasitanaman.ui.auth.forgotpassword
 
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
