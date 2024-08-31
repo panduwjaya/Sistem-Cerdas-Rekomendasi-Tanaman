@@ -2,6 +2,19 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-feature android:name="android.hardware.camera.front" />
+    <uses-feature android:name="android.hardware.camera.front.autofocus" />
+
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission
+        android:name="android.permission.WRITE_EXTERNAL_STORAGE"
+        android:maxSdkVersion="28" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -13,7 +26,28 @@
         android:theme="@style/Theme.SistemCerdasRekomendasiTanaman"
         tools:targetApi="31">
         <activity
-            android:name=".ui.primary.profile.ProfileActivity"
+            android:name=".ui.HolderImageActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.auth.password.ResetPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.auth.register.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.auth.login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.primary.scan.ScanFragment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.primary.favorite.FavoriteFragment"
+            android:exported="false" />
+        <activity
+            android:name=".ui.primary.detail_tanaman.DetailTanamanActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.primary.profile.ProfileFragment"
             android:exported="false" />
         <activity
             android:name=".ui.onboarding.onboardingThird.OnboardThirdActivity"
