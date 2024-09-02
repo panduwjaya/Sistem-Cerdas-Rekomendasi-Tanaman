@@ -5,8 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/onboardingThird"
-    tools:context=".ui.onboarding.onboardingThird.OnboardThirdActivity">
+    android:background="@drawable/onboardingthird"
+    tools:context=".ui.onboarding.onboardingThird.OnThirdActivity">
 
     <ImageView
         android:id="@+id/imageView"
@@ -16,7 +16,7 @@
         android:layout_marginTop="58dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:srcCompat="@drawable/onboardingLogo" />
+        tools:srcCompat="@drawable/onboardinglogo" />
 
     <TextView
         android:id="@+id/textView"
