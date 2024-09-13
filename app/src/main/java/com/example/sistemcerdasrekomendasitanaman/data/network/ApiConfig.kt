@@ -15,7 +15,7 @@ class ApiConfig {
             .addInterceptor(loggingInterceptor)
             .build()
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://34.50.95.134:8080/")
+            .baseUrl("https://image-classification-kp-dot-pure-environs-429001-v0.et.r.appspot.com/")
             .addConverterFactory(GsonConverterFactory.create())
             .client(client)
             .build()
