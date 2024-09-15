@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Sistem Cerdas Rekomendasi Tanaman</string>
+    <string name="invalid_password">Password must be at least 8 characters</string>
+    <string name="password_empty">Password cannot be empty</string>
+    <string name="email_empty">Email cannot be empty</string>
+    <string name="invalid_email">Invalid email format</string>
 </resources>

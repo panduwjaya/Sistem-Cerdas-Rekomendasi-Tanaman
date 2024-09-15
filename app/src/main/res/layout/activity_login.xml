@@ -28,7 +28,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/email"
+            android:id="@+id/email_box"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@id/login_text"
-            app:layout_constraintBottom_toTopOf="@id/password">
+            app:layout_constraintBottom_toTopOf="@id/password_box">
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/login_ed_email"
@@ -49,7 +49,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <com.google.android.material.textfield.TextInputLayout
-            android:id="@+id/password"
+            android:id="@+id/password_box"
             style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -58,7 +58,7 @@
             app:errorEnabled="true"
             app:endIconMode="password_toggle"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/email"
+            app:layout_constraintTop_toBottomOf="@id/email_box"
             app:layout_constraintBottom_toTopOf="@id/forgot_password">
 
             <com.google.android.material.textfield.TextInputEditText
@@ -77,7 +77,7 @@
             android:text="Forgot Password?"
             android:textColor="@android:color/black"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@+id/password"
+            app:layout_constraintTop_toBottomOf="@+id/password_box"
             app:layout_constraintStart_toStartOf="parent"
             />
 
@@ -97,17 +97,41 @@
             android:padding="12dp"/>
 
         <TextView
-            android:id="@+id/register"
+            android:id="@+id/login_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Belum punya akun? Daftar Disini"
+            android:layout_marginTop="16dp"
+            android:layout_marginStart="95dp"
+            android:text="Belum punya akun?"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toStartOf="@id/register_here"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/login_button" />
+
+        <TextView
+            android:id="@+id/register_here"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Daftar Disini"
             android:textColor="@color/green"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@+id/login_button"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="16dp"/>
+            app:layout_constraintStart_toEndOf="@id/login_message"
+            app:layout_constraintTop_toTopOf="@id/login_message"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ProgressBar
+        style="?android:attr/progressBarStyle"
+        android:id="@+id/progress_bar_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:visibility="visible"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
