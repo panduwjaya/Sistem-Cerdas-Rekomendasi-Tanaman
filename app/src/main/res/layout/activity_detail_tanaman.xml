@@ -69,7 +69,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:text="Aristolochia Acuminata"
+            android:text="@string/detail_title"
             android:textColor="@color/black"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="@+id/iv_Detail_tanaman"
@@ -81,7 +81,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
-            android:text="Aristolochia indica var. magna, Aristolochia tagala"
+            android:text="@string/detail_heading"
             android:textColor="@color/black"
             android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="@+id/plant_name"
@@ -135,7 +135,7 @@
                 android:layout_marginTop="15dp"
                 android:textColor="@color/green"
                 android:textSize="16sp"
-                android:text="Deskripsi" />
+                android:text="@string/description" />
 
             <TextView
                 android:id="@+id/tv_detail_description"
@@ -146,7 +146,7 @@
                 android:layout_marginBottom="15dp"
                 android:textColor="@color/black"
                 android:textSize="12sp"
-                tools:text="Lorem ipsum dolor sit amet consectetur. Aliquet fringilla est egestas felis cras ut velit in. Sem nulla nisl iaculis faucibus. Ipsum neque dictum amet vulputate auctor. Non nibh leo lorem tincidunt dictum amet semper. Quis sit eu ultricies mauris lobortis. Senectus mollis nulla duis habitasse enim sed tortor." />
+                tools:text="@string/detail_description" />
 
         </androidx.cardview.widget.CardView>
 
@@ -164,7 +164,7 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Rekomendasi Untuk Kamu"
+                android:text="@string/detail_message"
                 android:textColor="@color/green"
                 android:textSize="16sp" />
 

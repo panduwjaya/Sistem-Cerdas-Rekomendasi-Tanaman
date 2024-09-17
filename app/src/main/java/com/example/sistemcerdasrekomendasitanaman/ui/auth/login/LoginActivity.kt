@@ -7,9 +7,11 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.sistemcerdasrekomendasitanaman.MainActivity
 import com.example.sistemcerdasrekomendasitanaman.R
 import com.example.sistemcerdasrekomendasitanaman.databinding.ActivityLoginBinding
 import com.example.sistemcerdasrekomendasitanaman.ui.auth.register.RegisterActivity
+import com.example.sistemcerdasrekomendasitanaman.ui.onboarding.onboardingFirst.OnFirstActivity
 import com.example.sistemcerdasrekomendasitanaman.utils.show
 
 class LoginActivity : AppCompatActivity() {
@@ -53,6 +55,7 @@ class LoginActivity : AppCompatActivity() {
 
             }
             finishLoadingState()
+            startActivity(Intent(context,OnFirstActivity::class.java))
         }
     }
 
