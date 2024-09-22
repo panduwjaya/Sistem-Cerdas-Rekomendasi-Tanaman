@@ -20,8 +20,8 @@ object DummyData {
         DetailTanaman(
             1,
             R.drawable.jengkol_1,
-            "Archidendron pauciflorum",
-            "Jengkol, Pithecellobium jiringa",
+            "Jengkol",
+            "Archidendron pauciflorum, Pithecellobium jiringa",
             "25-30℃",
             "Jengkol adalah pohon dari keluarga Fabaceae yang dapat tumbuh hingga 20 meter. Pohon ini memiliki kulit batang halus berwarna abu-abu dan daun bipinnate. Biji jengkol sering digunakan dalam masakan Indonesia dan Malaysia, meskipun memiliki bau yang kuat. Tanaman ini tumbuh subur di hutan hujan primer dan sekunder di Asia Tenggara"
         ),
@@ -92,10 +92,14 @@ object DummyData {
         DetailTanaman(
             10,
             R.drawable.saga_1,
-            "Adenanthera pavonina",
-            "Saga, Inga pavonina",
+            "Saga",
+            "Adenanthera pavonina, Inga pavonina",
             "25-30℃",
             "Adenanthera pavonina, dari keluarga Fabaceae, berasal dari India, Sri Lanka, dan Asia Tenggara. Pohon ini memiliki bunga putih-kuning yang harum dan biji merah mengkilap yang sering digunakan untuk membuat perhiasan. Kayunya keras dan digunakan untuk konstruksi, pembuatan furnitur, dan kayu bakar."
         )
     )
+
+    fun getPlantByName(name: String): DetailTanaman? {
+        return detailTanaman.find { it.name.equals(name, ignoreCase = true) }
+    }
 }

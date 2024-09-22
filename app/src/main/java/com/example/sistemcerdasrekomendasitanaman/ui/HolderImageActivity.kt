@@ -2,6 +2,7 @@ package com.example.sistemcerdasrekomendasitanaman.ui
 
 import android.Manifest
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.Uri
 import android.os.Bundle
@@ -14,10 +15,12 @@ import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 import com.example.sistemcerdasrekomendasitanaman.R
+import com.example.sistemcerdasrekomendasitanaman.data.database.DummyData
 import com.example.sistemcerdasrekomendasitanaman.data.network.ApiConfig
 import com.example.sistemcerdasrekomendasitanaman.data.network.ApiService
 import com.example.sistemcerdasrekomendasitanaman.data.response.PredictionResponse
 import com.example.sistemcerdasrekomendasitanaman.databinding.HolderImageBinding
+import com.example.sistemcerdasrekomendasitanaman.ui.primary.detail_tanaman.DetailTanamanActivity
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
 import okhttp3.RequestBody.Companion.asRequestBody
@@ -89,6 +92,7 @@ class HolderImageActivity : AppCompatActivity() {
                 }
                 val requestBody = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
                 val multipartBody = MultipartBody.Part.createFormData("file", file.name, requestBody)
+
                 val dialogView = LayoutInflater.from(this).inflate(R.layout.dialog_analisis, null)
                 progressDialog = AlertDialog.Builder(this)
                     .setView(dialogView)
@@ -103,7 +107,24 @@ class HolderImageActivity : AppCompatActivity() {
                         if (response.isSuccessful) {
                             val prediction = response.body()?.prediction
                             Log.d("Prediction", prediction.toString())
-                            Toast.makeText(this@HolderImageActivity, "Ini merupakan tanaman $prediction", Toast.LENGTH_LONG).show()
+
+                            if (prediction != null) {
+                                val plantName = prediction.split("-")[0].trim()
+                                Log.d("HolderImageActivity", "Tanaman berhasil diprediksi: $plantName")
+
+                                val plantDetail = DummyData.getPlantByName(plantName)
+
+                                if (plantDetail != null) {
+                                    val intent = Intent(this@HolderImageActivity, DetailTanamanActivity::class.java)
+                                    intent.putExtra("plantDetail", plantDetail)
+                                    Log.d("HolderImageActivity", "Plant detail is: $plantDetail")
+                                    startActivity(intent)
+                                    Log.d("HolderImageActivity", "berhasil masuk ke detail tanaman")
+                                } else {
+                                    Toast.makeText(this@HolderImageActivity, "Tanaman tidak ditemukan", Toast.LENGTH_LONG).show()
+                                    Log.d("HolderImageActivity", "tidak berhasil masuk ke detail tanaman")
+                                }
+                            }
                         } else {
                             Log.e("Prediction", "Gagal memprediksi gambar")
                         }

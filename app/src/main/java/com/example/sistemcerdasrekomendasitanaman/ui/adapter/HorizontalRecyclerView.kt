@@ -3,14 +3,19 @@ package com.example.sistemcerdasrekomendasitanaman.ui.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sistemcerdasrekomendasitanaman.data.database.Favorite
+import com.example.sistemcerdasrekomendasitanaman.data.database.DetailTanaman
 import com.example.sistemcerdasrekomendasitanaman.databinding.ItemFavoriteBinding
 
-class HorizontalRecyclerView: RecyclerView.Adapter<HorizontalRecyclerView.MyViewHolder>() {
+class HorizontalRecyclerView(private val itemClickListener: OnItemClickListener) : RecyclerView.Adapter<HorizontalRecyclerView.MyViewHolder>() {
 
-    private var dataList : List<Favorite> = ArrayList()
+    private var dataList : List<DetailTanaman> = ArrayList()
 
-    fun setData(data: List<Favorite>){
+    interface OnItemClickListener {
+        fun onItemClick(detailTanaman: DetailTanaman)
+    }
+
+
+    fun setData(data: List<DetailTanaman>){
         this.dataList = data
     }
 
@@ -25,12 +30,16 @@ class HorizontalRecyclerView: RecyclerView.Adapter<HorizontalRecyclerView.MyView
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bind(dataList[position])
+        holder.itemView.setOnClickListener {
+            itemClickListener.onItemClick(dataList[position])
+        }
     }
 
     class MyViewHolder(private val binding: ItemFavoriteBinding) : RecyclerView.ViewHolder(binding.root) {
-        fun bind(favorite: Favorite) {
+        fun bind(detailTanaman: DetailTanaman) {
             with(binding) {
-                tvPlantName.text = favorite.name
+                ivRecyclerView.setImageResource(detailTanaman.imageSlide)
+                tvPlantName.text = detailTanaman.name
             }
         }
     }
