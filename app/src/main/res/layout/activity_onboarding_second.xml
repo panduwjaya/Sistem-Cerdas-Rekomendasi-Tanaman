@@ -25,6 +25,8 @@
         android:layout_marginStart="100dp"
         android:layout_marginTop="68dp"
         android:text="Selamat Datang"
+        android:textStyle="bold"
+        android:textColor="@color/green"
         android:textSize="24sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -36,8 +38,20 @@
         android:layout_marginStart="20dp"
         android:layout_marginTop="163dp"
         android:textSize="12sp"
-        android:text="Scan, kenali, dan pelajari tentang berbagai tanaman hutan di sekitar Anda."
+        android:text="@string/scan_kenali_dan_pelajari_tentang_berbagai_tanaman_hutan_di_sekitar_anda"
+        android:textStyle="bold"
+        android:textColor="@color/green"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/img_arrow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="254dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/arrow_up" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

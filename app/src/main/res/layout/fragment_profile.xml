@@ -33,7 +33,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:shapeAppearanceOverlay="@style/CircleImageViewStyle"
-        tools:src="@drawable/ex_profile" />
+        android:src="@drawable/ex_profile" />
 
 
     <TextView

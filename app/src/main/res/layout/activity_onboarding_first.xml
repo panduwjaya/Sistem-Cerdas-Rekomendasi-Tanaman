@@ -26,6 +26,8 @@
         android:layout_marginTop="68dp"
         android:text="@string/welcome_message"
         android:textSize="24sp"
+        android:textColor="@color/green"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -37,7 +39,19 @@
         android:layout_marginTop="163dp"
         android:textSize="12sp"
         android:text="@string/firstonboarding_message"
+        android:textStyle="bold"
+        android:textColor="@color/green"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+    android:id="@+id/img_arrow"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="254dp"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:srcCompat="@drawable/arrow_up" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

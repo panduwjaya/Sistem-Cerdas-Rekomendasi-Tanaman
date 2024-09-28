@@ -37,4 +37,7 @@
     <string name="favorite">Favorite</string>
     <string name="profile">Profile</string>
     <string name="favorite_description">Aristolochia Acuminata</string>
+    <string name="scan_kenali_dan_pelajari_tentang_berbagai_tanaman_hutan_di_sekitar_anda">Scan, kenali, dan pelajari tentang berbagai tanaman hutan di sekitar Anda.</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
