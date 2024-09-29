@@ -7,7 +7,6 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.sistemcerdasrekomendasitanaman.MainActivity
 import com.example.sistemcerdasrekomendasitanaman.R
 import com.example.sistemcerdasrekomendasitanaman.databinding.ActivityLoginBinding
 import com.example.sistemcerdasrekomendasitanaman.ui.auth.register.RegisterActivity
@@ -34,7 +33,7 @@ class LoginActivity : AppCompatActivity() {
         onClickLogin()
     }
 
-    private fun onClickLogin(){
+    private fun onClickLogin() {
         binding.apply {
             loginButton.setOnClickListener {
                 startLoadingState()
@@ -43,7 +42,9 @@ class LoginActivity : AppCompatActivity() {
                 val password = loginEdPassword.text.toString()
 
                 val emailError = if (email.isEmpty()) getString(R.string.email_empty)
-                else if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()) getString(R.string.invalid_email)
+                else if (!Patterns.EMAIL_ADDRESS.matcher(email)
+                        .matches()
+                ) getString(R.string.invalid_email)
                 else null
 
                 val passwordError = if (password.isEmpty()) getString(R.string.password_empty)
@@ -55,17 +56,17 @@ class LoginActivity : AppCompatActivity() {
 
             }
             finishLoadingState()
-            startActivity(Intent(context,OnFirstActivity::class.java))
+            startActivity(Intent(context, OnFirstActivity::class.java))
         }
     }
 
-    private fun navigateToRegister(){
+    private fun navigateToRegister() {
         binding.registerHere.setOnClickListener {
             startActivity(Intent(context, RegisterActivity::class.java))
         }
     }
 
-    private fun startLoadingState(){
+    private fun startLoadingState() {
         binding.apply {
             progressBarLogin.show(true)
             loginEdEmail.isEnabled = false
@@ -74,7 +75,7 @@ class LoginActivity : AppCompatActivity() {
         }
     }
 
-    private fun finishLoadingState(){
+    private fun finishLoadingState() {
         binding.apply {
             progressBarLogin.show(false)
             loginEdEmail.isEnabled = true

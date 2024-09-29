@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "876045375259",
+    "project_id": "sistem-rekomendasi-tanaman",
+    "storage_bucket": "sistem-rekomendasi-tanaman.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:876045375259:android:a933ded1d6fcdbacfee5be",
+        "android_client_info": {
+          "package_name": "com.example.sistemcerdasrekomendasitanaman"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSeZHoxwfOL0iZ3TTVk-e-iUEzrR_jsbc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
