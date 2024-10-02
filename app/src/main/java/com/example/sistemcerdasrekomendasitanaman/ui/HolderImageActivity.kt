@@ -105,11 +105,11 @@ class HolderImageActivity : AppCompatActivity() {
                 apiService.predict(multipartBody).enqueue(object : Callback<PredictionResponse> {
                     override fun onResponse(call: Call<PredictionResponse>, response: Response<PredictionResponse>) {
                         if (response.isSuccessful) {
-                            val prediction = response.body()?.prediction
+                            val prediction = response.body()?.plant
                             Log.d("Prediction", prediction.toString())
 
                             if (prediction != null) {
-                                val plantName = prediction.split("-")[0].trim()
+                                val plantName = prediction.trim()
                                 Log.d("HolderImageActivity", "Tanaman berhasil diprediksi: $plantName")
 
                                 val plantDetail = DummyData.getPlantByName(plantName)

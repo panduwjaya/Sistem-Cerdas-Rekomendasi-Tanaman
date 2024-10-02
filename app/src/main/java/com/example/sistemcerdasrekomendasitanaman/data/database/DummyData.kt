@@ -1,5 +1,6 @@
 package com.example.sistemcerdasrekomendasitanaman.data.database
 
+import android.util.Log
 import com.example.sistemcerdasrekomendasitanaman.R
 
 object DummyData {
@@ -68,16 +69,16 @@ object DummyData {
         DetailTanaman(
             7,
             R.drawable.melicope_lunu_ankenda_1,
-            "Melicope lunu-ankenda",
-            "Euodia lunu-ankenda, Chabang Tiga",
+            "Melicope latifolia",
+            "Euodia latifolia, Pauh-Pauh",
             "13-27,5℃",
-            "Melicope lunu-ankenda adalah tanaman hutan dari keluarga Rutaceae yang tumbuh di Asia, termasuk Indonesia. Tanaman ini memiliki daun trifoliat elips, bunga putih kecil, dan buah folikel kering yang berisi 1-2 biji. Selain dimanfaatkan dalam pengobatan tradisional, tanaman ini juga berpotensi digunakan sebagai bahan salad dan bumbu."
+            "Melicope latifolia adalah tanaman hutan dari keluarga Rutaceae yang tumbuh di Asia, termasuk Indonesia. Tanaman ini memiliki daun trifoliat elips, bunga putih kecil, dan buah folikel kering yang berisi 1-2 biji. Selain dimanfaatkan dalam pengobatan tradisional, tanaman ini juga berpotensi digunakan sebagai bahan salad dan bumbu."
         ),
         DetailTanaman(
             8,
             R.drawable.cinnamomum_verum_1,
-            "Cinnamomum verum ",
-            "Kayu Manis, Cinnamomum zeylanicum",
+            "Cinnamomum zeylanicum",
+            "Kayu Manis, Cinnamomum verum",
             "19–23,3℃",
             "Cinnamomum verum, dari keluarga Lauraceae, berasal dari Sri Lanka. Pohon ini dapat tumbuh hingga 17 meter dan memiliki daun hijau gelap dengan tiga urat kuning yang khas. Bunganya kecil, berwarna putih atau krem, dan buahnya berupa drupa ungu yang mengandung satu biji. Kulit kayunya digunakan sebagai rempah kayu manis, sementara minyak dari daunnya digunakan sebagai perasa."
         ),
@@ -99,7 +100,10 @@ object DummyData {
         )
     )
 
+
     fun getPlantByName(name: String): DetailTanaman? {
-        return detailTanaman.find { it.name.equals(name, ignoreCase = true) }
+        val firstPlantName = name.trim()
+        Log.d("DummyData", "Mencari tanaman dengan nama: $firstPlantName")
+        return detailTanaman.find { it.name.contains(firstPlantName, ignoreCase = true) }
     }
 }
