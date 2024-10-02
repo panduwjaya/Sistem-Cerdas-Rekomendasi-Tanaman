@@ -38,7 +38,13 @@
             android:exported="false" />
         <activity
             android:name=".ui.auth.login.LoginActivity"
-            android:exported="false" />
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".ui.primary.scan.ScanFragment"
             android:exported="false" />
@@ -52,23 +58,17 @@
             android:name=".ui.primary.profile.ProfileFragment"
             android:exported="false" />
         <activity
-            android:name=".ui.onboarding.onboardingThird.OnboardThirdActivity"
+            android:name=".ui.onboarding.onboardingThird.OnThirdActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.onboarding.onboardingSecond.OnboardSecondActivity"
+            android:name=".ui.onboarding.onboardingSecond.OnSecondActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.onboarding.onboardingFirst.OnboardFirstActivity"
+            android:name=".ui.onboarding.onboardingFirst.OnFirstActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false"/>
     </application>
 
 </manifest>
