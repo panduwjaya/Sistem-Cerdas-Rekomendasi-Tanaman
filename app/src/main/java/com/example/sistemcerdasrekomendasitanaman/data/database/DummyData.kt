@@ -4,17 +4,17 @@ import android.util.Log
 import com.example.sistemcerdasrekomendasitanaman.R
 
 object DummyData {
-    val favoriteItems = listOf(Favorite(1, "Aristolochia Acuminata"),
-        Favorite(1, "Aristolochia Acuminata"),
-        Favorite(1, "Aristolochia Acuminata"),
-        Favorite(1, "Aristolochia Acuminata"),
-        Favorite(1, "Aristolochia Acuminata"),
-        Favorite(1, "Aristolochia Acuminata"),
-        Favorite(1, "Aristolochia Acuminata"),
-        Favorite(1, "Aristolochia Acuminata"),
-        Favorite(1, "Aristolochia Acuminata"),
-        Favorite(1, "Aristolochia Acuminata"),
-        Favorite(1, "Aristolochia Acuminata")
+    val favoriteItems = listOf(
+        Favorite(1, "Jengkol", R.drawable.jengkol_1),
+        Favorite(2, "Aristolochia Acuminata", R.drawable.aristolochia_acuminata_1 ),
+        Favorite(3, "Cassia fistula", R.drawable.cassia_fistula_1),
+        Favorite(4, "Clerodendrum paniculatum", R.drawable.clerodendrum_1),
+        Favorite(5, "Mussaenda frondosa", R.drawable.mussaenda_frondosa_1),
+        Favorite(6, "Micromelum minutum", R.drawable.micromelum_minutum_1),
+        Favorite(7, "Melicope latifolia", R.drawable.melicope_lunu_ankenda_1),
+        Favorite(8, "Cinnamomum verum ", R.drawable.cinnamomum_verum_1),
+        Favorite(9, "Uvaria grandiflora", R.drawable.uvaria_1),
+        Favorite(10, "Saga", R.drawable.saga_1)
     )
 
     val detailTanaman = listOf(
@@ -100,10 +100,14 @@ object DummyData {
         )
     )
 
-
     fun getPlantByName(name: String): DetailTanaman? {
         val firstPlantName = name.trim()
         Log.d("DummyData", "Mencari tanaman dengan nama: $firstPlantName")
         return detailTanaman.find { it.name.contains(firstPlantName, ignoreCase = true) }
+    }
+
+    fun getPlantById(id: Int): DetailTanaman? {
+        Log.d("DummyData", "Mencari tanaman dengan ID: $id")
+        return detailTanaman.find { it.id == id }
     }
 }

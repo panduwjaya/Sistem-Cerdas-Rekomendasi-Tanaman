@@ -1,7 +1,11 @@
 package com.example.sistemcerdasrekomendasitanaman.data.database
 
-//dummydata
-class Favorite (
-    var id: Int ?=0,
-    var name: String ?= "",
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+
+@Entity(tableName = "favorite_plant")
+data class Favorite(
+    @PrimaryKey val id: Int,
+    val name: String,
+    val imageUri: Int
 )

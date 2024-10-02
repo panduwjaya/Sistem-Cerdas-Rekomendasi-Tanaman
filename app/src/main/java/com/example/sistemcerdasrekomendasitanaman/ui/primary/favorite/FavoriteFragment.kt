@@ -6,24 +6,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.sistemcerdasrekomendasitanaman.data.database.DummyData
-import com.example.sistemcerdasrekomendasitanaman.data.database.Favorite
 import com.example.sistemcerdasrekomendasitanaman.databinding.FragmentFavoriteBinding
-import com.example.sistemcerdasrekomendasitanaman.ui.adapter.GridRecyclerView
+import com.example.sistemcerdasrekomendasitanaman.ui.adapter.FavoriteAdapter
 import com.example.sistemcerdasrekomendasitanaman.ui.primary.detail_tanaman.DetailTanamanActivity
 
 class FavoriteFragment : Fragment() {
-
+    private lateinit var favoriteViewModel: FavoriteViewModel
+    private lateinit var favoriteAdapter: FavoriteAdapter
     private lateinit var binding: FragmentFavoriteBinding
-    private lateinit var recyclerView: RecyclerView
-    private lateinit var adapter: GridRecyclerView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View {
+    ): View? {
         binding = FragmentFavoriteBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -31,21 +29,28 @@ class FavoriteFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val textViewFavorite = binding.textFavorite
-        textViewFavorite.visibility = View.GONE
+        favoriteViewModel = ViewModelProvider(this)[FavoriteViewModel::class.java]
 
-        recyclerView = binding.rvFavorite
-        adapter = GridRecyclerView { favorite ->
-            val intent = Intent(requireContext(), DetailTanamanActivity::class.java)
-            intent.putExtra("FAVORITE_ID", favorite.id)
-            intent.putExtra("FAVORITE_NAME", favorite.name)
-            startActivity(intent)
+        setupRecyclerView()
+
+        favoriteViewModel.allFavorites.observe(viewLifecycleOwner) { favorites ->
+            if (favorites.isNullOrEmpty()) {
+                binding.textFavorite.visibility = View.VISIBLE
+            } else {
+                binding.textFavorite.visibility = View.GONE
+            }
+
+            favoriteAdapter = FavoriteAdapter(favorites) { selectedFavorite ->
+                val detailIntent = Intent(requireContext(), DetailTanamanActivity::class.java)
+                detailIntent.putExtra("plantDetail", DummyData.getPlantById(selectedFavorite.id))
+                startActivity(detailIntent)
+            }
+            binding.rvFavorite.adapter = favoriteAdapter
         }
+    }
 
-        recyclerView.layoutManager = GridLayoutManager(requireContext(), 3)
-        recyclerView.adapter = adapter
-
-        adapter.setData(DummyData.favoriteItems)
+    private fun setupRecyclerView() {
+        binding.rvFavorite.layoutManager = GridLayoutManager(requireContext(), 3)
     }
 }
 

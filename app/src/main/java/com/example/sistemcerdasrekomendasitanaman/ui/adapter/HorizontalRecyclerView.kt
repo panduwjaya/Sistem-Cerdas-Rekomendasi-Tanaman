@@ -38,7 +38,7 @@ class HorizontalRecyclerView(private val itemClickListener: OnItemClickListener)
     class MyViewHolder(private val binding: ItemFavoriteBinding) : RecyclerView.ViewHolder(binding.root) {
         fun bind(detailTanaman: DetailTanaman) {
             with(binding) {
-                ivRecyclerView.setImageResource(detailTanaman.imageSlide)
+                ivRecycleView.setImageResource(detailTanaman.imageSlide)
                 tvPlantName.text = detailTanaman.name
             }
         }
