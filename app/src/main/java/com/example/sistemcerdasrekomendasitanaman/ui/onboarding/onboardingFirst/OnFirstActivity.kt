@@ -30,6 +30,7 @@ class OnFirstActivity : AppCompatActivity() {
         binding.imgArrow.setOnClickListener {
             val intent = Intent(this, OnSecondActivity::class.java)
             startActivity(intent)
+            finish()
         }
 
     }

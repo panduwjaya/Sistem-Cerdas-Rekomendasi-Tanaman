@@ -1,9 +1,8 @@
 package com.example.sistemcerdasrekomendasitanaman
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
 import com.example.sistemcerdasrekomendasitanaman.databinding.ActivityMainBinding
 import com.ismaeldivita.chipnavigation.ChipNavigationBar
 
