@@ -59,12 +59,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="29dp"
+            android:layout_marginStart="32dp"
             android:text="@string/forgot_password"
             android:textColor="@android:color/black"
             android:textSize="14sp"
-            app:layout_constraintTop_toBottomOf="@+id/login_ed_password"
             app:layout_constraintStart_toStartOf="parent"
-            />
+            app:layout_constraintTop_toBottomOf="@+id/login_ed_password" />
 
         <Button
             android:id="@+id/login_button"

@@ -21,5 +21,30 @@
         android:id="@+id/navigation_profile"
         android:name="com.example.sistemcerdasrekomendasitanaman.ui.primary.profile.ProfileFragment"
         android:label="Profile"
-        tools:layout="@layout/fragment_profile" />
+        tools:layout="@layout/fragment_profile" >
+        <action
+            android:id="@+id/action_navigation_profile_to_helpFragment"
+            app:destination="@id/helpFragment" />
+        <action
+            android:id="@+id/action_navigation_profile_to_appInfoFragment"
+            app:destination="@id/appInfoFragment" />
+        <action
+            android:id="@+id/action_navigation_profile_to_changePasswordFragment"
+            app:destination="@id/changePasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/helpFragment"
+        android:name="com.example.sistemcerdasrekomendasitanaman.ui.primary.other.HelpFragment"
+        android:label="fragment_help"
+        tools:layout="@layout/fragment_help" />
+    <fragment
+        android:id="@+id/appInfoFragment"
+        android:name="com.example.sistemcerdasrekomendasitanaman.ui.primary.other.AppInfoFragment"
+        android:label="fragment_app_info"
+        tools:layout="@layout/fragment_app_info" />
+    <fragment
+        android:id="@+id/changePasswordFragment"
+        android:name="com.example.sistemcerdasrekomendasitanaman.ui.primary.other.ChangePasswordFragment"
+        android:label="fragment_change_password"
+        tools:layout="@layout/fragment_change_password" />
 </navigation>
