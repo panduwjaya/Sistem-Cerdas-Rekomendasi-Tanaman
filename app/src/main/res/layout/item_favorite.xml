@@ -16,12 +16,12 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
-            android:id="@+id/ivRecyclerView"
+            android:id="@+id/ivRecycleView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:src="@drawable/kaktus"
-            android:scaleType="centerCrop"/>
-
+            android:scaleType="centerCrop"
+            android:contentDescription="gambar tanaman"/>
     </androidx.cardview.widget.CardView>
 
     <TextView
@@ -38,6 +38,6 @@
         app:layout_constraintEnd_toEndOf="@+id/itemFavorite"
         app:layout_constraintStart_toStartOf="@+id/itemFavorite"
         app:layout_constraintTop_toBottomOf="@+id/itemFavorite"
-        tools:text="@string/favorite_description" />
+        tools:text="Aristolochia Acuminata" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

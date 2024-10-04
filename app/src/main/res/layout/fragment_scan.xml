@@ -70,12 +70,13 @@
                         android:contentDescription="Tombol Gallery Camera"
                         android:background="@drawable/ic_gallery_green"
                         />
+
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
         </androidx.constraintlayout.widget.ConstraintLayout>
     </RelativeLayout>
 
-    <Button
+    <com.google.android.material.button.MaterialButton
         android:id="@+id/camera"
         android:contentDescription="camera for scan"
         android:layout_width="75dp"
@@ -96,7 +97,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
 
