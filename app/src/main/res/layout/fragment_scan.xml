@@ -76,7 +76,7 @@
         </androidx.constraintlayout.widget.ConstraintLayout>
     </RelativeLayout>
 
-    <com.google.android.material.button.MaterialButton
+    <Button
         android:id="@+id/camera"
         android:contentDescription="camera for scan"
         android:layout_width="75dp"
