@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Sistem Cerdas Rekomendasi Tanaman</string>
+    <string name="app_name">Plant Scan</string>
     <string name="invalid_password">Password must be at least 8 characters</string>
     <string name="password_empty">Password cannot be empty</string>
     <string name="email_empty">Email cannot be empty</string>
@@ -40,4 +40,6 @@
     <string name="scan_kenali_dan_pelajari_tentang_berbagai_tanaman_hutan_di_sekitar_anda">Scan, kenali, dan pelajari tentang berbagai tanaman hutan di sekitar Anda.</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_confirm_password">Confirm Password</string>
+    <string name="new_password">New Password</string>
 </resources>
