@@ -2,17 +2,14 @@ package com.example.sistemcerdasrekomendasitanaman.ui.primary.other
 
 import android.content.Intent
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.sistemcerdasrekomendasitanaman.R
+import androidx.fragment.app.Fragment
 import com.example.sistemcerdasrekomendasitanaman.databinding.FragmentChangePasswordBinding
 import com.example.sistemcerdasrekomendasitanaman.ui.auth.login.LoginActivity
-import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException
 
 
 class ChangePasswordFragment : Fragment() {
@@ -21,7 +18,6 @@ class ChangePasswordFragment : Fragment() {
     private val binding get() = _binding!!
 
     private lateinit var auth: FirebaseAuth
-    private val user = auth.currentUser
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -42,6 +38,8 @@ class ChangePasswordFragment : Fragment() {
     }
 
     private fun changePassword() {
+        auth = FirebaseAuth.getInstance()
+        val user = auth.currentUser
         binding.btnChangePassword.setOnClickListener {
 
             val newPass = binding.changeEdPassword.text.toString()

@@ -36,12 +36,20 @@
         android:id="@+id/helpFragment"
         android:name="com.example.sistemcerdasrekomendasitanaman.ui.primary.other.HelpFragment"
         android:label="fragment_help"
-        tools:layout="@layout/fragment_help" />
+        tools:layout="@layout/fragment_help" >
+        <action
+            android:id="@+id/action_helpFragment_to_navigation_profile"
+            app:destination="@id/navigation_profile" />
+    </fragment>
     <fragment
         android:id="@+id/appInfoFragment"
         android:name="com.example.sistemcerdasrekomendasitanaman.ui.primary.other.AppInfoFragment"
         android:label="fragment_app_info"
-        tools:layout="@layout/fragment_app_info" />
+        tools:layout="@layout/fragment_app_info" >
+        <action
+            android:id="@+id/action_appInfoFragment_to_navigation_profile"
+            app:destination="@id/navigation_profile" />
+    </fragment>
     <fragment
         android:id="@+id/changePasswordFragment"
         android:name="com.example.sistemcerdasrekomendasitanaman.ui.primary.other.ChangePasswordFragment"
