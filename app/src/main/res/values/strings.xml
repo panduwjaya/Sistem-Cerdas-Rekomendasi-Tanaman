@@ -42,4 +42,9 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="text_confirm_password">Confirm Password</string>
     <string name="new_password">New Password</string>
+    <string name="nama_latin_tanaman">Nama Latin Tanaman</string>
+    <string name="sinonim_tanaman">Sinonim tanaman</string>
+    <string name="suhu_tanaman">20-38℃</string>
+    <string name="deskripsi">Deskripsi</string>
+    <string name="rekomendasi">Rekomendasi Untuk Kamu</string>
 </resources>
