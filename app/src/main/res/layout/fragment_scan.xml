@@ -47,7 +47,7 @@
                         android:scaleType="centerCrop"
                         android:clickable="true"
                         android:background="@drawable/ic_flash_off"
-                        android:contentDescription="Tombol Flash Camera"/>
+                        android:contentDescription="@string/cd_flashbtn"/>
 
                     <ImageButton
                         android:id="@+id/flip_camera_btn"
@@ -57,7 +57,7 @@
                         android:scaleType="centerCrop"
                         android:clickable="true"
                         android:background="@drawable/ic_flipcamera_green"
-                        android:contentDescription="Tombol Flip Camera"
+                        android:contentDescription="@string/cd_flipbtn"
                         android:layout_marginHorizontal="25dp"/>
 
                     <ImageButton
@@ -67,7 +67,7 @@
                         android:layout_gravity="center"
                         android:scaleType="centerCrop"
                         android:clickable="true"
-                        android:contentDescription="Tombol Gallery Camera"
+                        android:contentDescription="@string/cd_gallerybtn"
                         android:background="@drawable/ic_gallery_green"
                         />
 

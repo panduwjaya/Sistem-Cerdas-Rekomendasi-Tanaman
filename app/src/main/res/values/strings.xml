@@ -47,4 +47,13 @@
     <string name="suhu_tanaman">20-38℃</string>
     <string name="deskripsi">Deskripsi</string>
     <string name="rekomendasi">Rekomendasi Untuk Kamu</string>
+    <string name="empty_favorite">belum ada favorite</string>
+    <string name="cd_flashbtn">Tombol Flash Camera</string>
+    <string name="cd_flipbtn">Tombol Flip Camera</string>
+    <string name="cd_gallerybtn">Tombol Gallery Camera</string>
+    <string name="cd_RvItemFav">gambar pada recycleView</string>
+    <string name="cd_bottomNavBar">bottom navigation bar</string>
+    <string name="cd_ic_temp">icon temperature</string>
+    <string name="cd_ic_backBtn">Tombol kembali</string>
+    <string name="cd_ic_fav_btn">tombol favorite</string>
 </resources>
