@@ -16,7 +16,7 @@
         android:text="@string/profile_title"
         android:textAlignment="center"
         android:textColor="@color/green"
-        android:textSize="16sp"
+        android:textSize="20sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"

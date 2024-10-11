@@ -56,4 +56,5 @@
     <string name="cd_ic_temp">icon temperature</string>
     <string name="cd_ic_backBtn">Tombol kembali</string>
     <string name="cd_ic_fav_btn">tombol favorite</string>
+    <string name="favorite_title">Favorite</string>
 </resources>

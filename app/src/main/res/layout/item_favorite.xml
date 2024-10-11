@@ -4,13 +4,13 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:paddingStart="0dp"
-    android:paddingEnd="20dp"
+    android:paddingEnd="18dp"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/itemFavorite"
-        android:layout_width="100dp"
-        android:layout_height="130dp"
+        android:layout_width="110dp"
+        android:layout_height="140dp"
         app:cardCornerRadius="25dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -29,7 +29,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_toEndOf="@id/itemFavorite"
-        android:textSize="14sp"
+        android:textSize="13sp"
         android:textColor="@color/black"
         android:enabled="true"
         android:gravity="center"
@@ -38,6 +38,6 @@
         app:layout_constraintEnd_toEndOf="@+id/itemFavorite"
         app:layout_constraintStart_toStartOf="@+id/itemFavorite"
         app:layout_constraintTop_toBottomOf="@+id/itemFavorite"
-        tools:text="Aristolochia Acuminata" />
+        tools:text="@string/nama_latin_tanaman" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
