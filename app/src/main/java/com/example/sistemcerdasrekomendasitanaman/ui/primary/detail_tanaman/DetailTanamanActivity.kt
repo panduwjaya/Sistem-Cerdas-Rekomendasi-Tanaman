@@ -15,6 +15,7 @@ import com.example.sistemcerdasrekomendasitanaman.data.database.Favorite
 import com.example.sistemcerdasrekomendasitanaman.databinding.ActivityDetailTanamanBinding
 import com.example.sistemcerdasrekomendasitanaman.ui.adapter.HorizontalRecyclerView
 import com.example.sistemcerdasrekomendasitanaman.ui.primary.favorite.FavoriteViewModel
+import com.example.sistemcerdasrekomendasitanaman.ui.primary.scan.ScanFragment
 import kotlinx.coroutines.launch
 
 class DetailTanamanActivity : AppCompatActivity() {
@@ -38,7 +39,9 @@ class DetailTanamanActivity : AppCompatActivity() {
         binding.btnBack.setOnClickListener { finish() }
 
         setupRecommendationRecyclerView()
+        setupScanButton()
         setupFavoriteButton()
+
     }
 
     private fun setupDetailPage(plant: DetailTanaman) {
@@ -52,14 +55,9 @@ class DetailTanamanActivity : AppCompatActivity() {
         checkIfFavorite(plant.id)
     }
 
-    private fun setupFavoriteButton() {
-        binding.btnFavorite.setOnClickListener {
-            plantDetail?.let { plant ->
-                if (isFavorite) removeFromFavorite(plant) else addToFavorite(plant)
-                isFavorite = !isFavorite
-                updateFavoriteButton()
-            }
-        }
+    private fun showErrorAndFinish() {
+        Toast.makeText(this, "Detail tanaman tidak ditemukan", Toast.LENGTH_SHORT).show()
+        finish()
     }
 
     private fun setupRecommendationRecyclerView() {
@@ -76,9 +74,25 @@ class DetailTanamanActivity : AppCompatActivity() {
         adapter.setData(DummyData.detailTanaman.shuffled())
     }
 
-    private fun showErrorAndFinish() {
-        Toast.makeText(this, "Detail tanaman tidak ditemukan", Toast.LENGTH_SHORT).show()
-        finish()
+    private fun setupScanButton() {
+        binding.btnScan.setOnClickListener {
+            val scanFragment = ScanFragment()
+
+            supportFragmentManager.beginTransaction()
+                .replace(R.id.nav_host_fragment_activity_main, scanFragment)
+                .addToBackStack(null)
+                .commit()
+        }
+    }
+
+    private fun setupFavoriteButton() {
+        binding.btnFavorite.setOnClickListener {
+            plantDetail?.let { plant ->
+                if (isFavorite) removeFromFavorite(plant) else addToFavorite(plant)
+                isFavorite = !isFavorite
+                updateFavoriteButton()
+            }
+        }
     }
 
     private fun checkIfFavorite(plantId: Int) {

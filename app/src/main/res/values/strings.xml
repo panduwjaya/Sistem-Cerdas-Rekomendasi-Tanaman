@@ -57,4 +57,6 @@
     <string name="cd_ic_backBtn">Tombol kembali</string>
     <string name="cd_ic_fav_btn">tombol favorite</string>
     <string name="favorite_title">Favorite</string>
+    <string name="cd_ic_scan_btn">ikon tombol scan</string>
+    <string name="btn_scan_detail">Scan tanaman</string>
 </resources>

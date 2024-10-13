@@ -12,7 +12,7 @@ object DummyData {
         Favorite(5, "Mussaenda frondosa", R.drawable.mussaenda_frondosa_1),
         Favorite(6, "Micromelum minutum", R.drawable.micromelum_minutum_1),
         Favorite(7, "Melicope latifolia", R.drawable.melicope_lunu_ankenda_1),
-        Favorite(8, "Cinnamomum verum ", R.drawable.cinnamomum_verum_1),
+        Favorite(8, "Cinamomum zeylanicum ", R.drawable.cinnamomum_verum_1),
         Favorite(9, "Uvaria grandiflora", R.drawable.uvaria_1),
         Favorite(10, "Saga", R.drawable.saga_1)
     )
@@ -77,7 +77,7 @@ object DummyData {
         DetailTanaman(
             8,
             R.drawable.cinnamomum_verum_1,
-            "Cinnamomum zeylanicum",
+            "Cinamomum zeylanicum",
             "Kayu Manis, Cinnamomum verum",
             "19–23,3℃",
             "Cinnamomum verum, dari keluarga Lauraceae, berasal dari Sri Lanka. Pohon ini dapat tumbuh hingga 17 meter dan memiliki daun hijau gelap dengan tiga urat kuning yang khas. Bunganya kecil, berwarna putih atau krem, dan buahnya berupa drupa ungu yang mengandung satu biji. Kulit kayunya digunakan sebagai rempah kayu manis, sementara minyak dari daunnya digunakan sebagai perasa."
