@@ -8,6 +8,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sistemcerdasrekomendasitanaman.MainActivity
 import com.example.sistemcerdasrekomendasitanaman.R
 import com.example.sistemcerdasrekomendasitanaman.data.database.DetailTanaman
 import com.example.sistemcerdasrekomendasitanaman.data.database.DummyData
@@ -15,7 +16,6 @@ import com.example.sistemcerdasrekomendasitanaman.data.database.Favorite
 import com.example.sistemcerdasrekomendasitanaman.databinding.ActivityDetailTanamanBinding
 import com.example.sistemcerdasrekomendasitanaman.ui.adapter.HorizontalRecyclerView
 import com.example.sistemcerdasrekomendasitanaman.ui.primary.favorite.FavoriteViewModel
-import com.example.sistemcerdasrekomendasitanaman.ui.primary.scan.ScanFragment
 import kotlinx.coroutines.launch
 
 class DetailTanamanActivity : AppCompatActivity() {
@@ -76,12 +76,9 @@ class DetailTanamanActivity : AppCompatActivity() {
 
     private fun setupScanButton() {
         binding.btnScan.setOnClickListener {
-            val scanFragment = ScanFragment()
-
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.nav_host_fragment_activity_main, scanFragment)
-                .addToBackStack(null)
-                .commit()
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+            finish()
         }
     }
 
