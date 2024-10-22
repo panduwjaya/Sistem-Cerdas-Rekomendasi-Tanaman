@@ -37,7 +37,7 @@
         android:layout_height="61dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="163dp"
-        android:text="Dengan PlantScan, jelajahi keindahan hutan dan kenali setiap tanaman dengan mudah"
+        android:text="Siap untuk mengenali berbagai spesies tanaman? Mulai sekarang!"
         android:textColor="@color/green"
         android:textSize="12sp"
         android:textStyle="bold"
