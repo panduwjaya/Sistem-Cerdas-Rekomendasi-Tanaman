@@ -9,6 +9,10 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.TextView
+import androidx.appcompat.app.AlertDialog
+import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import com.example.sistemcerdasrekomendasitanaman.R
@@ -57,10 +61,7 @@ class ProfileFragment : Fragment() {
         }
 
         binding.btnLogout.setOnClickListener {
-            auth.signOut()
-            val intent = Intent(context,LoginActivity::class.java)
-            startActivity(intent)
-            activity?.finish()
+            showLogoutConfirmationDialog()
         }
     }
 
@@ -99,6 +100,39 @@ class ProfileFragment : Fragment() {
                     }
                 }
             }
+    }
+
+    private fun showLogoutConfirmationDialog() {
+        val dialogView = LayoutInflater.from(requireContext()).inflate(R.layout.dialog_logout, null)
+        val alertDialogBuilder = AlertDialog.Builder(requireContext())
+            .setView(dialogView)
+            .setCancelable(false)
+
+        val alertDialog = alertDialogBuilder.create()
+        alertDialog.window?.setLayout(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT)
+        alertDialog.window?.setBackgroundDrawable(ContextCompat.getDrawable(requireContext(), R.drawable.custom_dialog_bg))
+        alertDialog.show()
+
+
+        val tvLogoutMessage = dialogView.findViewById<TextView>(R.id.tvLogoutMessage)
+        val btnCancel = dialogView.findViewById<Button>(R.id.btnCancel)
+        val btnConfirmLogout = dialogView.findViewById<Button>(R.id.btnConfirmLogout)
+
+        btnCancel.setOnClickListener {
+            alertDialog.dismiss()
+        }
+
+        btnConfirmLogout.setOnClickListener {
+            performLogout()
+            alertDialog.dismiss()
+        }
+    }
+
+    private fun performLogout() {
+        auth.signOut()
+        val intent = Intent(context,LoginActivity::class.java)
+        startActivity(intent)
+        activity?.finish()
     }
 
 

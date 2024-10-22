@@ -15,7 +15,7 @@ interface FavoriteDao {
     @Delete
     suspend fun removeFavorite(plant: Favorite)
 
-    @Query("SELECT * FROM favorite_plant WHERE id = :plantId")
+    @Query("SELECT * FROM favorite_plant WHERE id = :plantId LIMIT 1")
     suspend fun getFavoriteById(plantId: Int): Favorite?
 
     @Query("SELECT * FROM favorite_plant")

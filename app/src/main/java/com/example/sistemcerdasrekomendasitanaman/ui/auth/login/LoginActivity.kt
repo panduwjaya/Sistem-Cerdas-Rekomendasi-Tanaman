@@ -86,7 +86,7 @@ class LoginActivity : AppCompatActivity() {
                     startActivity(intent)
                     finish()
                 } else{
-                    Toast.makeText(this,"${it.exception?.message}",Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this,"Email atau Password Salah",Toast.LENGTH_SHORT).show()
                 }
             }
     }

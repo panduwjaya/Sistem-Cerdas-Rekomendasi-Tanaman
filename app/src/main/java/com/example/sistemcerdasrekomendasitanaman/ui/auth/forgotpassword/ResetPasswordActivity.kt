@@ -12,6 +12,7 @@ import com.example.sistemcerdasrekomendasitanaman.R
 import com.example.sistemcerdasrekomendasitanaman.databinding.ActivityResetPasswordBinding
 import com.example.sistemcerdasrekomendasitanaman.ui.auth.login.LoginActivity
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseAuthInvalidUserException
 
 class ResetPasswordActivity : AppCompatActivity() {
 
@@ -45,14 +46,19 @@ class ResetPasswordActivity : AppCompatActivity() {
                 return@setOnClickListener
             }
 
-            auth.sendPasswordResetEmail(email).addOnCompleteListener{
-                if (it.isSuccessful){
-                    Toast.makeText(this,"Email Reset Password Telah Dikirim",Toast.LENGTH_SHORT).show()
-                    val intent = Intent(this,LoginActivity::class.java)
+            auth.sendPasswordResetEmail(email).addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(this, "Email Reset Password Telah Dikirim", Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this, LoginActivity::class.java)
                     startActivity(intent)
                     finish()
-                } else{
-                    Toast.makeText(this,"${it.exception?.message}",Toast.LENGTH_SHORT).show()
+                } else {
+                    val exception = task.exception
+                    if (exception is FirebaseAuthInvalidUserException) {
+                        Toast.makeText(this, "Email belum terdaftar", Toast.LENGTH_SHORT).show()
+                    } else {
+                        Toast.makeText(this, "Error: ${exception?.message}", Toast.LENGTH_SHORT).show()
+                    }
                 }
             }
         }
